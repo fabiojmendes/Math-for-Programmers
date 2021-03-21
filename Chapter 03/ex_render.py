@@ -11,7 +11,7 @@ Z_COORD = 2
 
 
 def component(v, direction):
-    return (dot(v, direction) / length(direction))
+    return dot(v, direction) / length(direction)
 
 
 def vector_to_2d(v):
