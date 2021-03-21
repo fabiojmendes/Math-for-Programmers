@@ -28,8 +28,6 @@ def to_triangles(poly):
         yield poly
     elif len(poly) == 4:
         # break down the quad in two triangles
-        # 0, 1, 2
-        # 0, 3, 2
         yield (poly[0], poly[2], poly[1])
         yield (poly[0], poly[3], poly[2])
     else:
