@@ -16,6 +16,9 @@ blues = matplotlib.cm.get_cmap('Blues')
 def shade(face,color_map=blues,light=(1,2,3)):
     return color_map(1 - dot(unit(normal(face)), unit(light)))
 
+def remove_dim(v):
+    return v[:3]
+
 def Axes():
     axes =  [
         [(-1000,0,0),(1000,0,0)],
@@ -62,6 +65,7 @@ def draw_model(faces, color_map=blues, light=(1,2,3),
             else:
                 return v
         transformed_faces = polygon_map(do_matrix_transform, faces)
+        transformed_faces = polygon_map(remove_dim, transformed_faces)
         for face in transformed_faces:
             color = shade(face,color_map,light)
             for vertex in face:
