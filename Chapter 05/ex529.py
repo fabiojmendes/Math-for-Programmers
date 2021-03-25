@@ -54,8 +54,8 @@ print("scale and rotate:", matrix)
 
 (a, b), (c, d) = matrix
 matrix = (
-    (a, b, 4),
-    (c, d, 4),
+    (a, b, 2),
+    (c, d, 2),
     (0, 0, 1),
 )
 print("scale, rotate and translate:")
