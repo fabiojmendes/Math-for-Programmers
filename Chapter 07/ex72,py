@@ -1,0 +1,18 @@
+width, height = 400, 400
+
+
+def to_pixels(x, y):
+    return (width / 2 + width * x / 20, height / 2 - height * y / 20)
+
+
+if __name__ == "__main__":
+    points = [
+        (-10, -10),
+        (-10, 0),
+        (0, 0),
+        (10, 0),
+        (10, 10),
+        (10, -10),
+    ]
+    for p in points:
+        print(p, to_pixels(*p))
