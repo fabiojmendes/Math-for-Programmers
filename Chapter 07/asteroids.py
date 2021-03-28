@@ -119,7 +119,7 @@ def main():
 
     while not done:
 
-        clock.tick()
+        clock.tick(60)
 
         for event in pygame.event.get(): # User did something
             if event.type == pygame.QUIT: # If user clicked close
@@ -129,6 +129,9 @@ def main():
 
         milliseconds = clock.get_time()
         keys = pygame.key.get_pressed()
+
+        if keys[pygame.K_ESCAPE]:
+            done=True
 
         for ast in asteroids:
             ast.move(milliseconds)
